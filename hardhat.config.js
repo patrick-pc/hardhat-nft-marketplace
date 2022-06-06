@@ -22,7 +22,6 @@ const MNEMONIC = process.env.MNEMONIC || 'your mnemonic'
 
 // Your API key for Etherscan, obtain one at https://etherscan.io/
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || 'Your etherscan API key'
-const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY || 'Your polygonscan API key'
 const REPORT_GAS = process.env.REPORT_GAS || false
 
 module.exports = {
@@ -46,6 +45,7 @@ module.exports = {
       //   },
       saveDeployments: true,
       chainId: 4,
+      blockConfirmations: 6,
     },
     mainnet: {
       url: MAINNET_RPC_URL,
@@ -55,6 +55,7 @@ module.exports = {
       //   },
       saveDeployments: true,
       chainId: 1,
+      blockConfirmations: 6,
     },
   },
   etherscan: {
@@ -62,7 +63,6 @@ module.exports = {
     apiKey: {
       rinkeby: ETHERSCAN_API_KEY,
       kovan: ETHERSCAN_API_KEY,
-      polygon: POLYGONSCAN_API_KEY,
     },
   },
   gasReporter: {
